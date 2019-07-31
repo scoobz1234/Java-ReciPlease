@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReciPlease.MainPage"
+             Title="ReciPlease">
+
+    <Grid BackgroundColor="Gray">
+        <Grid >
+            <Button 
+            x:Name="btnShoppingList"
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Shopping List"/>
+
+            <Button 
+            x:Name="btnCreateRecipe" 
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="Create Recipe"/>
+
+            <Button 
+            x:Name="btnMenu" 
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Menu"/>
+
+            <Button 
+            x:Name="btnOptions" 
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Options"/>
+
+            <Button 
+            x:Name="btnExit"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Exit"/>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>
