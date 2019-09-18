@@ -7,9 +7,20 @@
              x:Class="ReciPlease.OptionsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Entry Text=""
+                   Placeholder="What do you want to share?"
+                   x:Name="entShare"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            
+            <Button x:Name="btnSend"
+                    Clicked="BtnSend_Clicked"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    Text="Share"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

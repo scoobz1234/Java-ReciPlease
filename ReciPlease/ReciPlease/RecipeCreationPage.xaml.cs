@@ -41,7 +41,7 @@ namespace ReciPlease
             {
                 Enums.MeatType mt = (Enums.MeatType)System.Enum.Parse(typeof(Enums.MeatType), pkrRecipeType.SelectedItem.ToString());
                 Recipe r = new Recipe(entRecipeName.Text, mt , listOfIngredients);
-               // App.RecipeDatabase.SaveRecipe(r);
+                App.RecipeDatabase.SaveRecipe(r);
                 await Navigation.PushAsync(new MainPage());
             }
         }

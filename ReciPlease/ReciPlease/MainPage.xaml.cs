@@ -11,13 +11,13 @@ namespace ReciPlease
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        static RecipeDatabaseController recipeDatabase;
 
         public MainPage()
         {
             InitializeComponent();
             btnExit.Clicked += ExitClicked;
             btnCreateRecipe.Clicked += CreateRecipeClicked;
+            btnOptions.Clicked += OptionsClicked;
         }
 
         private async void ExitClicked(object sender, EventArgs e)
@@ -34,14 +34,9 @@ namespace ReciPlease
             await Navigation.PushAsync(new RecipeCreationPage());
         }
 
-        public static RecipeDatabaseController RecipeDatabase {
-            get {
-                if (recipeDatabase == null)
-                {
-                    recipeDatabase = new RecipeDatabaseController();
-                }
-                return recipeDatabase;
-            }
+        private async void OptionsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OptionsPage());
         }
 
     }
