@@ -1,16 +1,22 @@
-﻿using ReciPlease.HelperClasses;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using ReciPlease.HelperClasses;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace ReciPlease.Classes
 {
     public class Ingredient
     {
-        public string amount;
-        public Enums.MeasurementTypes measurement;
-        public string ingredientName;
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
+        public int RecipeID { get; set; }
+
+        public string amount { get; set; }
+        public Enums.MeasurementTypes measurement { get; set; }
+        public string ingredientName { get; set; }
+
+        public Ingredient() { }
         public Ingredient(string _amount, Enums.MeasurementTypes _measurement, string _ingredientName)
         {
             amount = _amount;

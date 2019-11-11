@@ -1,26 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using ReciPlease.HelperClasses;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace ReciPlease.Classes
 {
     public class Recipe
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string recipeName { get; set; }
-        public Enums.MeatType type { get; set; }
-        public List<Ingredient> ingredients = new List<Ingredient>();
 
         public Recipe() { }
-        //Constructor...
-        public Recipe(string _recipeName, Enums.MeatType _type, List<Ingredient> _ingredients)
+        public Recipe(string _recipeName, Enums.MeatType _type)
         {
             recipeName = _recipeName;
             type = _type;
-            ingredients = _ingredients;
+        }
+
+
+        public string recipeName { get; set; }
+        public Enums.MeatType type { get; set; }
+
+        public override string ToString()
+        {
+            return this.recipeName + ", "+ this.type.ToString();
         }
     }
 }

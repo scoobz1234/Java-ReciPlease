@@ -2,9 +2,8 @@
 using ReciPlease.Classes;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using System;
-using System.Xml.Linq;
+using SQLite;
 
 namespace ReciPlease
 {
@@ -13,11 +12,11 @@ namespace ReciPlease
     {
 
         public List<Ingredient> listOfIngredients = new List<Ingredient>();
+
         public RecipeCreationPage()
         {
             InitializeComponent();
             SetupPickers();
-                        
             pkrMeasurementType.SelectedIndex = 0;
             pkrRecipeType.SelectedIndex = 0;
             btnCancel.Clicked += CancelClicked;
@@ -39,19 +38,46 @@ namespace ReciPlease
             bool isCanceling = await DisplayAlert("Confirmation", "Are you sure you want to Cancel?", "OK", "Cancel");
             if (isCanceling)
             {
-                Enums.MeatType mt = (Enums.MeatType)System.Enum.Parse(typeof(Enums.MeatType), pkrRecipeType.SelectedItem.ToString());
-                Recipe r = new Recipe(entRecipeName.Text, mt , listOfIngredients);
-                App.RecipeDatabase.SaveRecipe(r);
+                using (SQLiteConnection conn = new SQLiteConnection(App.FilePath)) 
+                {
+                    conn.DropTable<Recipe>();
+                    conn.DropTable<Ingredient>();
+                }
                 await Navigation.PushAsync(new MainPage());
             }
         }
 
         private async void CreateClicked(object sender, EventArgs e)
         {
-            bool confirmed = await DisplayAlert("Confirmation", "Is this Recipe ready to be created?", "Yes", "No");
+            bool confirmed = await DisplayAlert("Confirmation", 
+                "Is this Recipe ready to be created?", "Yes", "No");
             if (confirmed)
             {
-                
+                //get meat type from picker...
+                Enums.MeatType mt = (Enums.MeatType)Enum.Parse(typeof(Enums.MeatType), 
+                    pkrRecipeType.SelectedItem.ToString());
+                //create recipe object with name, meat type...
+                Recipe r = new Recipe(entRecipeName.Text, mt);
+
+
+                //need to add the recipe to the recipes database
+                using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
+                {
+                    //create the table if it doesnt exist...
+                    conn.CreateTable<Recipe>();
+                    //insert the recipe into the table...
+                    conn.Insert(r);
+
+                    //now the ingredients...
+                    conn.CreateTable<Ingredient>();
+
+                    foreach (Ingredient i in listOfIngredients)
+                    {
+                        i.RecipeID = r.Id;
+                        conn.Insert(i);
+                    }
+                }
+
                 await Navigation.PushAsync(new MainPage());
             }
         }
@@ -61,7 +87,6 @@ namespace ReciPlease
             Enums.MeasurementTypes mt = (Enums.MeasurementTypes)System.Enum.Parse(typeof(Enums.MeasurementTypes), pkrMeasurementType.SelectedItem.ToString());
 
             Ingredient i = new Ingredient(entIngredientAmount.Text, mt, entIngredientName.Text);
-
             listOfIngredients.Add(i);
 
             lvwIngredients.ItemsSource = null;

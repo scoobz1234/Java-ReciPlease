@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ReciPlease
@@ -18,6 +14,7 @@ namespace ReciPlease
             btnExit.Clicked += ExitClicked;
             btnCreateRecipe.Clicked += CreateRecipeClicked;
             btnOptions.Clicked += OptionsClicked;
+            btnMenu.Clicked += MenuClicked;
         }
 
         private async void ExitClicked(object sender, EventArgs e)
@@ -37,6 +34,11 @@ namespace ReciPlease
         private async void OptionsClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new OptionsPage());
+        }
+
+        private async void MenuClicked(object sender, EventArgs e) 
+        {
+            await Navigation.PushAsync(new MenuPage());
         }
 
     }

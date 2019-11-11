@@ -7,9 +7,25 @@
              x:Class="ReciPlease.MenuPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame HorizontalOptions="FillAndExpand" HeightRequest="30" Visual="Default" BackgroundColor="Black" Padding="20" Margin="0,0,0,-6">
+                <Label x:Name="lblRecipeName" Text="Menu" TextColor="White" AnchorX="0.5" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" LineBreakMode="NoWrap" VerticalOptions="Fill" FontSize="Title" />
+            </Frame>
+
+            <ListView x:Name="RecipeList" ItemTapped="RecipeList_ItemTapped" BackgroundColor="Gray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="AliceBlue"
+                                     Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding recipeName}" FontSize="Large"/>
+                                    <Label Text="{Binding type}" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

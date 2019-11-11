@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using System.IO;
+using SQLite;
+using ReciPlease.Data;
 
 namespace ReciPlease
 {
@@ -23,7 +20,7 @@ namespace ReciPlease
 
         private async void BtnSend_Clicked(object sender, EventArgs e)
         {
-            var fn = "Attachment.txt";
+            var fn = "SharedRecipe.txt";
             var file = Path.Combine(FileSystem.CacheDirectory, fn);
             File.WriteAllText(file, "Hello World");
 
@@ -31,7 +28,7 @@ namespace ReciPlease
             {
                 Title = Title,
                 File = new ShareFile(file)
-            }) ;
+            });
 
             //await Share.RequestAsync(new ShareTextRequest
             //{

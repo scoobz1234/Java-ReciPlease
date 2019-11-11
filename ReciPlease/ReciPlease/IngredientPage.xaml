@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReciPlease.IngredientPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Gray">
+            <!-- This is where we can set our Row count and its sizes-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Upper Grid (Recpie Data Input)-->
+            <Grid Grid.Row="0">
+                <!--Row definitions for UpperGrid-->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--Column Definitions for UpperGrid-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--Recipe Data Input-->
+
+                <Button
+                    x:Name="btnCancel"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Cancel"
+                    BackgroundColor="IndianRed"
+                    FontAttributes="Bold"
+                    Clicked="CancelClicked"/>
+
+                <Button
+                    x:Name="btnDelete"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Delete"
+                    BackgroundColor="Red"
+                    FontAttributes="Bold"
+                    Clicked="btnDelete_Clicked"/>
+
+                <Button
+                    x:Name="btnConfirm"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Text="Confirm"
+                    BackgroundColor="DodgerBlue"
+                    FontAttributes="Bold"
+                    Clicked="ConfirmClicked"/>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView 
+                    Grid.Row="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="Black" 
+                    HeightRequest="2"/>
+
+                <!--Ingredient Data Input-->
+                <Label 
+                    x:Name="lblIngredientName"
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    XAlign="Start" 
+                    YAlign="Center" 
+                    TextColor="Black"
+                    Text="Ingredient Name"/>
+
+                <Entry 
+                    x:Name="entIngredientName"
+                    Grid.Row="1" 
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Placeholder="Ingredient Name"/>
+
+                <Label 
+                    x:Name="lblIngredientAmount"
+                    Grid.Row="2" 
+                    Grid.Column="0" 
+                    Text="Ingredient Amount" 
+                    FontSize="Large"
+                    FontAttributes="Bold" 
+                    XAlign="Start" 
+                    YAlign="Center" 
+                    TextColor="Black"/>
+
+                <Entry 
+                    x:Name="entIngredientAmount"
+                    Grid.Row="2" 
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Placeholder="Ingredient Amount"
+                    Keyboard="Numeric"/>
+
+                <Label 
+                    x:Name="lblMeasurementType"
+                    Grid.Row="3" 
+                    Grid.Column="0" 
+                    Text="Measurement Type" 
+                    FontSize="Large"
+                    FontAttributes="Bold" 
+                    XAlign="Start" 
+                    YAlign="Center" 
+                    TextColor="Black"/>
+
+                <Picker 
+                    x:Name="pkrMeasurementType" 
+                    Grid.Row="3" 
+                    Grid.Column="1" 
+                    Grid.ColumnSpan="2"
+                    Title="Measurement Type"/>
+
+            </Grid>
+            <!--Lower Grid (View Recipe Ingredients)-->
+            <Grid Grid.Row="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <BoxView 
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="Black" 
+                    HeightRequest="2"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

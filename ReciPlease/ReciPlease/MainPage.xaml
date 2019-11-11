@@ -6,41 +6,37 @@
              mc:Ignorable="d"
              x:Class="ReciPlease.MainPage"
              Title="ReciPlease">
+    <StackLayout>
+        <Image 
+            x:Name="imgLogo" 
+            Source="logo.jpg" 
+            HorizontalOptions="FillAndExpand" 
+            Aspect="AspectFill" VerticalOptions="FillAndExpand" Margin="0"/>
 
-    <Grid BackgroundColor="Gray">
-        <Grid >
-            <Button 
-            x:Name="btnShoppingList"
-            Grid.Row="0"
-            Grid.Column="0"
-            Text="Shopping List"/>
+        <Grid BackgroundColor="White">
+        <Grid InputTransparent="False" Padding="10,10,10,0" >
 
             <Button 
-            x:Name="btnCreateRecipe" 
+            x:Name="btnCreateRecipe" HeightRequest="100"
             Grid.Row="0"
-            Grid.Column="1"
-            Text="Create Recipe"/>
+            Text="Create Recipe" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
 
             <Button 
             x:Name="btnMenu" 
             Grid.Row="1"
-            Grid.Column="0"
-            Text="Menu"/>
+            Text="Menu" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
 
             <Button 
             x:Name="btnOptions" 
-            Grid.Row="1"
-            Grid.Column="1"
-            Text="Options"/>
+            Grid.Row="2"
+            Text="Options" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
 
             <Button 
             x:Name="btnExit"
-            Grid.Row="2"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Text="Exit"/>
+            Grid.Row="3"
+            Text="Exit" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
 
         </Grid>
     </Grid>
-
+    </StackLayout>
 </ContentPage>
