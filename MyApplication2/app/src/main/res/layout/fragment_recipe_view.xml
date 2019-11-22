@@ -1,0 +1,71 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.reciplease.RecipeViewFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/tv_recipe_name"
+        android:textSize="@android:dimen/app_icon_size"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:background="@android:color/black"
+        android:textColor="@color/colorBlue"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/tv_recipe_type"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorBlue"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/lv_recipe_ingredients"
+        android:background="@android:color/darker_gray">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:text="@string/str_share_recipe"
+            android:id="@+id/btn_share_recipe_view"/>
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:text="@string/str_add_to_meals"
+            android:id="@+id/btn_add_to_meals"/>
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:text="@string/str_delete_recipe"
+            android:id="@+id/btn_delete_recipe"/>
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:text="@string/str_exit"
+            android:id="@+id/btn_exit_recipe_view"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

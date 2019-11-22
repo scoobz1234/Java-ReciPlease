@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">ReciPlease</string>
+
+    <!-- Strings -->
+    <string name="str_menu_search_devices">Search Devices</string>
+    <string name="str_menu_bluetooth_on">Turn on Bluetooth</string>
+    <string name="str_paired_devices">Paired Devices</string>
+    <string name="str_available_devices">Available Devices</string>
+    <string name="str_menu_scan_devices">Scan Devices</string>
+    <string name="str_add_ingredient">Add Ingredient</string>
+    <string name="str_recipe_information">Recipe Information</string>
+    <string name="str_ingredient_information">Ingredient Information</string>
+    <string name="str_create_recipe">Create</string>
+    <string name="str_meals_list">Menu</string>
+    <string name="str_share_recipe">Share</string>
+    <string name="str_exit">Exit</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_edit_ingredients">Edit</string>
+    <string name="str_delete_recipe">Delete</string>
+    <string name="str_go_back">Go Back</string>
+    <string name="str_not_connected">Not Connected</string>
+    <string name="str_add_to_meals">Add to Meals</string>
+    <string name="str_remove_from_meals">Remove from Meals</string>
+
+    <!-- Hints -->
+    <string name="hint_recipe_name">Recipe Name</string>
+    <string name="hint_ingredient_name">Ingredient Name</string>
+    <string name="hint_ingredient_amount">Ingredient Amount</string>
+
+    <!-- Labels -->
+    <string name="lbl_btn_send">Send</string>
+
+    <!-- measurements array -->
+    <string name="measurements1">Cups</string>
+    <string name="measurements2">Boxes</string>
+    <string name="measurements3">Cans</string>
+    <string name="measurements4">Dash</string>
+    <string name="measurements5">Packets</string>
+    <string name="measurements6">Pinch</string>
+    <string name="measurements7">Pounds</string>
+    <string name="measurements8">Quarts</string>
+    <string name="measurements9">Whole</string>
+    <string name="measurements10">Ounces</string>
+    <string name="measurements11">Teaspoons</string>
+    <string name="measurements12">Tablespoons</string>
+    <string name="measurement_type">Measurement Type</string>
+
+    <!-- recipe types -->
+    <string name="types1">Beef</string>
+    <string name="types2">Bison</string>
+    <string name="types3">Boar</string>
+    <string name="types4">Chicken</string>
+    <string name="types5">Duck</string>
+    <string name="types6">Fish</string>
+    <string name="types7">Lamb</string>
+    <string name="types8">Pheasant</string>
+    <string name="types9">Pork</string>
+    <string name="types10">Rabbit</string>
+    <string name="types11">Turkey</string>
+    <string name="types12">Vegan</string>
+    <string name="types13">Venison</string>
+    <string name="types14">Vegetarian</string>
+    <string name="types15">NonMeat</string>
+    <string name="recipe_type">Recipe Type</string>
+    <string name="types17">Dessert</string>
+    <string name="types16">Appetizers</string>
+    <string name="ingredient_type">Type of Measurement</string>
+
+</resources>

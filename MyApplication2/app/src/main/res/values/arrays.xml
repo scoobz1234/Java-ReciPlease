@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="measurement_types">
+        <item>@string/measurements1</item>
+        <item>@string/measurements2</item>
+        <item>@string/measurements3</item>
+        <item>@string/measurements4</item>
+        <item>@string/measurements5</item>
+        <item>@string/measurements6</item>
+        <item>@string/measurements7</item>
+        <item>@string/measurements8</item>
+        <item>@string/measurements9</item>
+        <item>@string/measurements10</item>
+        <item>@string/measurements11</item>
+        <item>@string/measurements12</item>
+    </string-array>
+    <string-array name="recipe_types">
+        <item>@string/types1</item>
+        <item>@string/types2</item>
+        <item>@string/types3</item>
+        <item>@string/types4</item>
+        <item>@string/types5</item>
+        <item>@string/types6</item>
+        <item>@string/types7</item>
+        <item>@string/types8</item>
+        <item>@string/types9</item>
+        <item>@string/types10</item>
+        <item>@string/types11</item>
+        <item>@string/types12</item>
+        <item>@string/types13</item>
+        <item>@string/types14</item>
+        <item>@string/types15</item>
+        <item>@string/types16</item>
+        <item>@string/types17</item>
+    </string-array>
+</resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="com.example.reciplease.MainActivity">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/black"/>
+
+    <TextView
+            android:id="@+id/lbl_recipe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="@string/str_recipe_information"
+            android:textSize="15pt" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/et_recipe_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="@string/hint_recipe_name"/>
+
+        <Spinner
+            android:id="@+id/spinner_recipe_type"
+            android:layout_width="fill_parent"
+            android:layout_height="29dp"
+            android:entries="@array/recipe_types"
+            android:prompt="@string/recipe_type" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/lbl_ingredient_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_ingredient_information"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="15pt" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/et_ingredient_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="@string/hint_ingredient_name"/>
+
+        <EditText
+            android:id="@+id/et_ingredient_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="@string/hint_ingredient_amount"/>
+
+        <Spinner
+            android:id="@+id/spinner_measurement_type"
+            android:layout_width="fill_parent"
+            android:layout_height="34dp"
+            android:entries="@array/measurement_types"
+            android:prompt="@string/ingredient_type" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_add_ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_add_ingredient" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_ingredients_list"
+                android:layout_width="fill_parent"
+                android:layout_height="256dp"
+                android:scrollbars="vertical" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_submit_recipe"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/str_create_recipe" />
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="200dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/str_cancel" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>
