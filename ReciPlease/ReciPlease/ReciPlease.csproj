@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="InTheHand.Devices.Bluetooth" Version="4.0.1803.22-preview" />
+    <PackageReference Include="InTheHand.Forms" Version="2.0.2019.1107" />
+    <PackageReference Include="Network.Bluetooth" Version="4.0.1803.22" />
+    <PackageReference Include="Plugin.ShareFile" Version="1.0.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
@@ -27,10 +31,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="OptionsPage.xaml">
+    <EmbeddedResource Update="SharePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="RecipeCreationPage.xaml">
@@ -39,14 +46,14 @@
     <EmbeddedResource Update="RecipePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ShoppingListPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="IngredientPage.xaml.cs">
       <DependentUpon>IngredientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SharePage.xaml.cs">
+      <DependentUpon>SharePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

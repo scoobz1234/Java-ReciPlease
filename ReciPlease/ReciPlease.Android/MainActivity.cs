@@ -3,14 +3,17 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using System.IO;
+using Android.Content;
+using System.Threading;
+using InTheHand;
+using InTheHand.Devices.Bluetooth;
+using InTheHand.ApplicationModel.DataTransfer;
+using System;
+using Android.Bluetooth;
 
 namespace ReciPlease.Droid
 {
-    [Activity(Label = "ReciPlease", 
-        Icon = "@mipmap/icon", 
-        Theme = "@style/MainTheme", 
-        MainLauncher = true, 
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "ReciPlease", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,8 +30,19 @@ namespace ReciPlease.Droid
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string completePath = Path.Combine(folderPath, fileName);
 
-            LoadApplication(new App(completePath));
+            var application = new App(completePath);
+
+            LoadApplication(application);
+
+            string action = Intent.Action;
+            string type = Intent.Type;
+
+            if (Intent.ActionView.Equals(action) && !string.IsNullOrEmpty(type))
+            {
+
+            }
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

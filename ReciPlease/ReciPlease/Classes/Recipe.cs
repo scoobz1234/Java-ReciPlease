@@ -17,7 +17,6 @@ namespace ReciPlease.Classes
             type = _type;
         }
 
-
         public string recipeName { get; set; }
         public Enums.MeatType type { get; set; }
 

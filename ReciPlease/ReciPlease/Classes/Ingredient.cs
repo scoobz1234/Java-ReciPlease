@@ -1,7 +1,5 @@
-﻿using System;
-using ReciPlease.HelperClasses;
+﻿using ReciPlease.HelperClasses;
 using SQLite;
-using SQLiteNetExtensions.Attributes;
 
 namespace ReciPlease.Classes
 {
@@ -9,7 +7,6 @@ namespace ReciPlease.Classes
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-
         public int RecipeID { get; set; }
 
         public string amount { get; set; }

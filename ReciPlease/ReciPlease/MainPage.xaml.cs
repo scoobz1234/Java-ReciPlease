@@ -13,7 +13,7 @@ namespace ReciPlease
             InitializeComponent();
             btnExit.Clicked += ExitClicked;
             btnCreateRecipe.Clicked += CreateRecipeClicked;
-            btnOptions.Clicked += OptionsClicked;
+            btnShare.Clicked += OptionsClicked;
             btnMenu.Clicked += MenuClicked;
         }
 
@@ -33,7 +33,7 @@ namespace ReciPlease
 
         private async void OptionsClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new OptionsPage());
+            await Navigation.PushAsync(new SharePage());
         }
 
         private async void MenuClicked(object sender, EventArgs e) 

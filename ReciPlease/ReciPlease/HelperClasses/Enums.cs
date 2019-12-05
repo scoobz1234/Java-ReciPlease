@@ -1,6 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/// <summary>
+/// Copyright© Stephen R. Ouellette 2019
+/// 
+/// This script contains all global enumerators for the project
+/// </summary>
+
 
 namespace ReciPlease.HelperClasses
 {
@@ -9,26 +12,36 @@ namespace ReciPlease.HelperClasses
         public enum MeatType
         {
             None,
-            Poultry,
-            Venison,
-            GroundBeef,
             Beef,
+            Bison,
+            Boar,
+            Chicken,
+            Duck,
             Fish,
+            Lamb,
+            Pheasant,
             Pork,
-            Vegan
+            Rabbit,
+            Turkey,
+            Vegan,
+            Venison
         }
 
         public enum MeasurementTypes
         {
             None,
-            Pounds,
-            Ounces,
-            Teaspoons,
-            Tablespoons,
-            Cups,
-            Whole,
+            Boxes,
             Cans,
-            Boxs
+            Cups,
+            Dash,
+            Ounces,
+            Packets,
+            Pinch,
+            Pounds,
+            Quarts,
+            Tablespoons,
+            Teaspoons,
+            Whole
         }
     }
 }

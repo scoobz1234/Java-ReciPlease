@@ -5,38 +5,57 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ReciPlease.MainPage"
-             Title="ReciPlease">
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Image 
             x:Name="imgLogo" 
-            Source="logo.jpg" 
+            Source="ReciPleaseLogo.jpg" 
             HorizontalOptions="FillAndExpand" 
-            Aspect="AspectFill" VerticalOptions="FillAndExpand" Margin="0"/>
+            Aspect="AspectFit" 
+            VerticalOptions="Center"
+            Margin="0"/>
 
-        <Grid BackgroundColor="White">
-        <Grid InputTransparent="False" Padding="10,10,10,0" >
+        <Grid 
+            BackgroundColor="White">
+            
+            <Grid 
+                InputTransparent="False" 
+                Padding="10,10,10,0" >
 
-            <Button 
-            x:Name="btnCreateRecipe" HeightRequest="100"
-            Grid.Row="0"
-            Text="Create Recipe" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
+                <Button 
+                    x:Name="btnCreateRecipe" 
+                    HeightRequest="100"
+                    Grid.Row="0"
+                    Text="Create Recipe" 
+                    BackgroundColor="#000000" 
+                    TextColor="#1D62FF" 
+                    FontSize="Title"/>
 
-            <Button 
-            x:Name="btnMenu" 
-            Grid.Row="1"
-            Text="Menu" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
+                <Button 
+                    x:Name="btnMenu" 
+                    Grid.Row="1"
+                    Text="Menu" 
+                    BackgroundColor="#000000" 
+                    TextColor="#1D62FF" 
+                    FontSize="Title"/>
 
-            <Button 
-            x:Name="btnOptions" 
-            Grid.Row="2"
-            Text="Options" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
+                <Button 
+                    x:Name="btnShare" 
+                    Grid.Row="2"
+                    Text="Share" 
+                    BackgroundColor="#000000" 
+                    TextColor="#1D62FF" 
+                    FontSize="Title"/>
 
-            <Button 
-            x:Name="btnExit"
-            Grid.Row="3"
-            Text="Exit" BackgroundColor="#000000" TextColor="#1D62FF" FontSize="Title"/>
+                <Button 
+                    x:Name="btnExit"
+                    Grid.Row="3"
+                    Text="Exit" 
+                    BackgroundColor="#000000" 
+                    TextColor="#1D62FF" 
+                    FontSize="Title"/>
 
+            </Grid>
         </Grid>
-    </Grid>
     </StackLayout>
 </ContentPage>

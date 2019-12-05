@@ -1,15 +1,11 @@
-﻿using ReciPlease.Data;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
+﻿using Xamarin.Forms;
 
 namespace ReciPlease
 {
     public partial class App : Application
     {
-        static RecipeDatabaseController recipeDatabase;
         public static string FilePath;
+        public string fileName;
 
        public App()
         {
@@ -42,16 +38,14 @@ namespace ReciPlease
             // Handle when your app resumes
         }
 
-        public static RecipeDatabaseController RecipeDatabase 
+        public void OpenFileStart() 
         {
-            get 
-            {
-                if (recipeDatabase == null)
-                {
-                    recipeDatabase = new RecipeDatabaseController();
-                }
-                return recipeDatabase;
-            }
+            MainPage = new NavigationPage(new FilePage(fileName));
         }
+    }
+
+    public class IncomingFile 
+    {
+        public string name { get; set; }
     }
 }
